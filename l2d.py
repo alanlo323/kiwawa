@@ -40,7 +40,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     print("l2d: handle_message()")
-    print("l2d: " + profile.display_name + " from LINE - " + event.message.text)
+    print("l2d: " + "XXX" + " from LINE - " + event.message.text)
     content = event.message.text
     content += "\n" + str(event)
     profile = line_bot_api.get_group_member_profile(
