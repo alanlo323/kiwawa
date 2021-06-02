@@ -28,11 +28,11 @@ async def on_message(message):
     print("d2l: on_message()")
     if message.webhook_id == discord_webhook_id: return
     if message_channel_id is not None and (message.channel.id != int(message_channel_id)): return
-    lotify_message = "＜" + message.author.display_name + "＞：\n"
+    lotify_message = "<" + message.author.display_name + ">:\n"
     lotify_message += message.content
     print("d2l: " + message.author.display_name + " from Discord - " + lotify_message)
     lotify.send_message(
-        access_token=lotify_token,
+        access_token=lotify_token, 
         message=lotify_message
     )
     print("d2l: on_message:done")
