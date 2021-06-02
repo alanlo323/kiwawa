@@ -16,6 +16,10 @@ handler = WebhookHandler(os.environ['LINEBOT_SECRET'])
 
 discord_webhook = os.environ['DISCORD_WEBHOOK']
 
+print("l2d: LINEBOT_ACCESS_TOKEN - " + os.environ['LINEBOT_ACCESS_TOKEN'])
+print("l2d: LINEBOT_SECRET - " + os.environ['LINEBOT_SECRET'])
+print("l2d: DISCORD_WEBHOOK - " + os.environ['DISCORD_WEBHOOK'])
+
 
 @app.route("/")
 def root():
