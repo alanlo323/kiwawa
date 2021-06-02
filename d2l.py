@@ -33,6 +33,7 @@ async def on_message(message):
         access_token=lotify_token,
         message=lotify_message
     )
+    print("d2l: " + message.author.display_name + " from Discord - " + lotify_message)
 
 
 bot.run(discordbot_token)
