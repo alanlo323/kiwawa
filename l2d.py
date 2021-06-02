@@ -44,11 +44,15 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     print("l2d: handle_message()")
-    print("l2d: " + "XXX" + " from LINE - " + event.message.text)
     content = event.message.text
+    if content.startswith("!"): content = "\"" + content + "\""
+    if content.startswith("/"): content = "\"" + content + "\""
+    if content.startswith("\\"): content = "\"" + content + "\""
+    if content.startswith("$"): content = "\"" + content + "\""
     content += "\n" + str(event)
     profile = line_bot_api.get_group_member_profile(
         event.source.group_id, event.source.user_id)
+    print("l2d: " + profile.display_name + " from LINE - " + event.message.text)
     request_data = {
         "content": event.message.text,
         "username": profile.display_name + " from LINE",
